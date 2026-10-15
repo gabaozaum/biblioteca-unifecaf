@@ -15,17 +15,6 @@ O site transforma um protótipo de baixa fidelidade em uma interface moderna, re
 - Fontes Poppins e Source Sans 3 (Google Fonts)
 - Nenhum framework, template pronto ou JavaScript
 
-## Estrutura
-
-
-
-biblioteca-unifecaf/
-├── index.html
-├── css/
-│   └── style.css
-└── assets/
-    └── imagens/
-
 ## Como abrir
 
 Acesse o link do site acima ou baixe o repositório e abra o arquivo `index.html` no navegador.
