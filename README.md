@@ -4,8 +4,6 @@ Primeira interface web da Biblioteca Digital UniFECAF, desenvolvida com HTML e C
 
 **Site publicado:** https://gabaozaum.github.io/biblioteca-unifecaf/
 
-**Autor(a):** [Seu nome] | RA [Seu RA] | [Seu curso]
-
 ## Sobre o projeto
 
 O site transforma um protótipo de baixa fidelidade em uma interface moderna, responsiva e acessível, com as seções definidas no protótipo: menu, banner inicial, sobre a biblioteca, livros, unidades e contatos.
