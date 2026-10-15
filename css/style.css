@@ -1,0 +1,650 @@
+/* ==========================================================
+   Biblioteca Digital UniFECAF — Folha de estilos
+   Sumário:
+   1. Variáveis (paleta, tipografia, espaçamentos)
+   2. Reset e base
+   3. Utilitários (container, botões, skip link)
+   4. Cabeçalho e menu
+   5. Hero
+   6. Seções (título padrão)
+   7. Sobre a nossa biblioteca
+   8. Banner
+   9. Nossos livros
+   10. As unidades
+   11. Contatos
+   12. Rodapé
+   13. Responsividade (tablet e smartphone)
+   14. Preferências do usuário (movimento reduzido)
+   ========================================================== */
+
+/* ---------- 1. VARIÁVEIS ---------- */
+:root {
+    /* Paleta baseada na identidade visual da UniFECAF (azul + verde) */
+    --azul-900: #031a38;   /* rodapé */
+    --azul-800: #06264d;   /* cabeçalho, unidades */
+    --azul-700: #0b3b73;   /* sobre */
+    --azul-600: #0a5cb8;   /* azul institucional: livros, botões */
+    --azul-300: #8fc1ee;   /* detalhes em fundos escuros */
+    --verde-500: #19a974;  /* destaque (ações principais) */
+    --cinza-100: #eaf1f8;  /* fundo claro (contatos) */
+    --texto: #1b2a3d;      /* texto sobre fundo claro */
+    --branco: #ffffff;
+
+    /* Tipografia */
+    --fonte-titulo: "Poppins", "Segoe UI", Arial, sans-serif;
+    --fonte-texto: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+    /* Espaçamentos e formas */
+    --largura-max: 1120px;
+    --espaco-secao: clamp(3rem, 6vw, 5rem);
+    --raio: 12px;
+}
+
+/* ---------- 2. RESET E BASE ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px; /* evita que o menu fixo cubra o título da seção */
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-texto);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--texto);
+    background: var(--branco);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: var(--fonte-titulo);
+    line-height: 1.25;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure {
+    margin: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--verde-500);
+    outline-offset: 3px;
+}
+
+/* ---------- 3. UTILITÁRIOS ---------- */
+.container {
+    width: 100%;
+    max-width: var(--largura-max);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 200;
+    padding: 0.6rem 1rem;
+    background: var(--branco);
+    color: var(--azul-800);
+    font-weight: 600;
+    border-radius: 0 0 var(--raio) var(--raio);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    background: var(--azul-600);
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background: var(--azul-800);
+}
+
+.btn--accent {
+    background: var(--verde-500);
+    color: var(--azul-900);
+}
+
+.btn--accent:hover {
+    background: #4fd9a6;
+}
+
+/* ---------- 4. CABEÇALHO E MENU ---------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--azul-800);
+    color: var(--branco);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 64px;
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.header__logo {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    background: var(--verde-500);
+    color: var(--azul-900);
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+.header__name strong {
+    font-weight: 700;
+}
+
+.nav__list {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav__link {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-family: var(--fonte-titulo);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.nav__link:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.nav__link--active {
+    background: var(--branco);
+    color: var(--azul-800);
+}
+
+.nav__link--active:hover {
+    background: var(--cinza-100);
+}
+
+/* Botão do menu mobile (oculto no desktop) */
+.nav-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-toggle__button {
+    display: none;
+}
+
+/* ---------- 5. HERO ---------- */
+.hero {
+    display: grid;
+    background: var(--azul-800);
+}
+
+.hero > * {
+    grid-area: 1 / 1;
+}
+
+.hero__img {
+    width: 100%;
+    height: clamp(380px, 42vw, 560px);
+    object-fit: cover;
+    object-position: right center;
+}
+
+/* Degradê à esquerda para garantir leitura do texto */
+.hero::before {
+    content: "";
+    grid-area: 1 / 1;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--azul-800) 0%, rgba(6, 38, 77, 0.85) 38%, rgba(6, 38, 77, 0) 72%);
+}
+
+.hero__content {
+    z-index: 2;
+    align-self: center;
+    color: var(--branco);
+}
+
+.hero__title {
+    max-width: 15ch;
+    margin-bottom: 1rem;
+    font-size: clamp(1.9rem, 4vw, 3.1rem);
+    font-weight: 700;
+}
+
+.hero__text {
+    max-width: 38ch;
+    margin-bottom: 1.75rem;
+    font-size: 1.15rem;
+}
+
+/* ---------- 6. SEÇÕES ---------- */
+.section {
+    padding-block: var(--espaco-secao);
+    color: var(--branco);
+}
+
+.section__title {
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    border-bottom: 4px solid var(--verde-500);
+    width: fit-content;
+}
+
+/* ---------- 7. SOBRE ---------- */
+.section--about {
+    background: var(--azul-700);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about__text {
+    margin: 0;
+}
+
+.about__figure img {
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.gallery__item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.gallery__caption {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ---------- 8. BANNER ---------- */
+.banner {
+    background: var(--azul-800);
+}
+
+.banner__img {
+    width: 100%;
+    height: clamp(180px, 28vw, 380px);
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ---------- 9. NOSSOS LIVROS ---------- */
+.section--books {
+    background: var(--azul-600);
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    color: var(--texto);
+    background: var(--branco);
+    border-radius: var(--raio);
+}
+
+.card__title {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--azul-800);
+}
+
+.card__img {
+    width: 55%;
+    max-width: 180px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(6, 38, 77, 0.28);
+}
+
+.card__text {
+    flex-grow: 1;   /* empurra o botão para o fim e alinha os cards */
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+}
+
+/* ---------- 10. AS UNIDADES ---------- */
+.section--units {
+    background: var(--azul-800);
+}
+
+.unit {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.unit + .unit {
+    margin-top: 2.5rem;
+}
+
+.unit__img {
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.unit__title {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--azul-300);
+}
+
+.unit__info {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* ---------- 11. CONTATOS ---------- */
+.section--contact {
+    background: var(--cinza-100);
+    color: var(--texto);
+}
+
+.section--contact .section__title {
+    color: var(--azul-800);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.contact__body a {
+    color: var(--azul-600);
+    font-weight: 600;
+}
+
+.contact__body a:hover {
+    color: var(--azul-800);
+}
+
+.contact__figure img {
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+/* ---------- 12. RODAPÉ ---------- */
+.footer {
+    padding-block: 1.5rem;
+    background: var(--azul-900);
+    color: var(--branco);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ---------- 13. RESPONSIVIDADE ---------- */
+
+/* Tablet */
+@media (max-width: 960px) {
+    .about {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about__figure {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .books {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Smartphone */
+@media (max-width: 720px) {
+    body {
+        font-size: 1rem;
+    }
+
+    /* No celular o cabeçalho rola junto com a página: assim o menu aberto
+       sai da frente do conteúdo depois que o usuário toca em um link */
+    html {
+        scroll-padding-top: 0;
+    }
+
+    .header {
+        position: static;
+    }
+
+    /* Menu recolhível */
+    .nav-toggle__button {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .nav-toggle__bar,
+    .nav-toggle__bar::before,
+    .nav-toggle__bar::after {
+        display: block;
+        width: 24px;
+        height: 3px;
+        background: var(--branco);
+        border-radius: 2px;
+        transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .nav-toggle__bar {
+        position: relative;
+    }
+
+    .nav-toggle__bar::before,
+    .nav-toggle__bar::after {
+        content: "";
+        position: absolute;
+        left: 0;
+    }
+
+    .nav-toggle__bar::before {
+        top: -8px;
+    }
+
+    .nav-toggle__bar::after {
+        top: 8px;
+    }
+
+    /* Ícone vira "X" quando o menu está aberto */
+    .nav-toggle:checked + .nav-toggle__button .nav-toggle__bar {
+        background: transparent;
+    }
+
+    .nav-toggle:checked + .nav-toggle__button .nav-toggle__bar::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-toggle:checked + .nav-toggle__button .nav-toggle__bar::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-toggle:focus-visible + .nav-toggle__button {
+        outline: 3px solid var(--verde-500);
+    }
+
+    .nav {
+        display: none;
+        width: 100%;
+        padding-bottom: 0.75rem;
+    }
+
+    .nav-toggle:checked ~ .nav {
+        display: block;
+    }
+
+    .nav__list {
+        flex-direction: column;
+    }
+
+    .nav__link {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Hero: imagem em cima, texto embaixo (sem sobreposição) */
+    .hero {
+        display: block;
+    }
+
+    .hero::before {
+        display: none;
+    }
+
+    .hero__img {
+        height: 220px;
+        object-position: 80% center;
+    }
+
+    .hero__content {
+        padding-block: 2rem;
+    }
+
+    /* Banner mais baixo no celular, mantendo os dispositivos visíveis */
+    .banner__img {
+        height: 140px;
+    }
+
+    .hero__title,
+    .hero__text {
+        max-width: none;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        gap: 0.875rem;
+    }
+
+    .books {
+        grid-template-columns: 1fr;
+    }
+
+    .unit {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact__figure {
+        order: -1;
+    }
+}
+
+/* ---------- 14. PREFERÊNCIAS DO USUÁRIO ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+}

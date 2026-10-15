@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Biblioteca Digital UniFECAF: livros, materiais acadêmicos e conteúdos de apoio à aprendizagem para os estudantes.">
+    <title>Biblioteca Digital UniFECAF</title>
+
+    <link rel="icon" href="assets/imagens/favicon.svg" type="image/svg+xml">
+
+    <!-- Fontes: Poppins (títulos) e Source Sans 3 (texto corrido) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+    <!-- ===================== CABEÇALHO / MENU ===================== -->
+    <header class="header" id="biblioteca">
+        <div class="container header__inner">
+            <a class="header__brand" href="#biblioteca">
+                <span class="header__logo" aria-hidden="true">U</span>
+                <span class="header__name">Biblioteca Digital <strong>UniFECAF</strong></span>
+            </a>
+
+            <!-- Menu mobile feito apenas com HTML + CSS (checkbox) -->
+            <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Abrir ou fechar o menu">
+            <label class="nav-toggle__button" for="nav-toggle" aria-hidden="true">
+                <span class="nav-toggle__bar"></span>
+            </label>
+
+            <nav class="nav" aria-label="Navegação principal">
+                <ul class="nav__list">
+                    <li><a class="nav__link nav__link--active" href="#biblioteca" aria-current="page">Biblioteca</a></li>
+                    <li><a class="nav__link" href="#livros">Livros</a></li>
+                    <li><a class="nav__link" href="#unidades">Unidades</a></li>
+                    <li><a class="nav__link" href="#contatos">Contatos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===================== HERO ===================== -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <img class="hero__img" src="assets/imagens/hero-biblioteca.svg" width="1600" height="640"
+                alt="Ilustração de estantes com livros coloridos nas cores da UniFECAF">
+            <div class="hero__content container">
+                <h1 id="hero-titulo" class="hero__title">Todo o conhecimento da UniFECAF em um só lugar</h1>
+                <p class="hero__text">Acesse livros, materiais acadêmicos e conteúdos de apoio ao estudo, de onde você estiver.</p>
+                <a class="btn btn--accent" href="#livros">Ver livros disponíveis</a>
+            </div>
+        </section>
+
+        <!-- ===================== SOBRE A NOSSA BIBLIOTECA ===================== -->
+        <section class="section section--about" aria-labelledby="sobre-titulo">
+            <div class="container">
+                <h2 id="sobre-titulo" class="section__title">Sobre a nossa biblioteca</h2>
+
+                <div class="about">
+                    <p class="about__text">
+                        A Biblioteca Digital UniFECAF reúne livros, artigos e materiais de apoio em um ambiente simples de usar.
+                        Aqui o estudante encontra o que precisa para as disciplinas do curso, sem filas e sem depender de horário.
+                    </p>
+
+                    <figure class="about__figure">
+                        <img src="assets/imagens/sobre-leitura.svg" width="800" height="560"
+                            alt="Ilustração de um livro aberto sobre fundo azul">
+                    </figure>
+
+                    <p class="about__text">
+                        O acervo é organizado por categorias e atualizado com frequência. Os destaques mostram as indicações do momento,
+                        e a equipe da biblioteca está disponível nas unidades e nos canais de contato para ajudar nas pesquisas.
+                    </p>
+                </div>
+
+                <ul class="gallery" aria-label="Serviços da biblioteca">
+                    <li class="gallery__item">
+                        <img src="assets/imagens/galeria-1.svg" width="600" height="450" alt="Livro aberto para leitura">
+                        <span class="gallery__caption">Leitura</span>
+                    </li>
+                    <li class="gallery__item">
+                        <img src="assets/imagens/galeria-2.svg" width="600" height="450" alt="Notebook com acesso ao acervo digital">
+                        <span class="gallery__caption">Acervo online</span>
+                    </li>
+                    <li class="gallery__item">
+                        <img src="assets/imagens/galeria-3.svg" width="600" height="450" alt="Estantes com livros organizados">
+                        <span class="gallery__caption">Estantes por categoria</span>
+                    </li>
+                    <li class="gallery__item">
+                        <img src="assets/imagens/galeria-4.svg" width="600" height="450" alt="Luminária sobre mesa de estudo">
+                        <span class="gallery__caption">Espaço de estudo</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===================== BANNER ===================== -->
+        <section class="banner" aria-label="Acervo disponível em computador e celular">
+            <img class="banner__img" src="assets/imagens/banner-acervo-digital.svg" width="1600" height="440"
+                alt="Ilustração de um notebook e um celular exibindo livros digitais">
+        </section>
+
+        <!-- ===================== NOSSOS LIVROS ===================== -->
+        <section class="section section--books" id="livros" aria-labelledby="livros-titulo">
+            <div class="container">
+                <h2 id="livros-titulo" class="section__title">Nossos livros</h2>
+
+                <div class="books">
+                    <article class="card">
+                        <h3 class="card__title">Fundamentos de Programação</h3>
+                        <img class="card__img" src="assets/imagens/capa-programacao.svg" width="600" height="800"
+                            alt="Capa do livro Fundamentos de Programação">
+                        <p class="card__text">Lógica, algoritmos e primeiros passos para escrever programas do zero.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Fundamentos de Programação">Saiba mais</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Gestão de Projetos</h3>
+                        <img class="card__img" src="assets/imagens/capa-gestao.svg" width="600" height="800"
+                            alt="Capa do livro Gestão de Projetos">
+                        <p class="card__text">Planejamento, prazos e equipes: como conduzir um projeto da ideia à entrega.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Gestão de Projetos">Saiba mais</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Introdução ao Design Web</h3>
+                        <img class="card__img" src="assets/imagens/capa-design-web.svg" width="600" height="800"
+                            alt="Capa do livro Introdução ao Design Web">
+                        <p class="card__text">HTML, CSS e boas práticas para criar páginas organizadas e responsivas.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Introdução ao Design Web">Saiba mais</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Banco de Dados na Prática</h3>
+                        <img class="card__img" src="assets/imagens/capa-banco-dados.svg" width="600" height="800"
+                            alt="Capa do livro Banco de Dados na Prática">
+                        <p class="card__text">Modelagem, tabelas e consultas SQL explicadas com exemplos do dia a dia.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Banco de Dados na Prática">Saiba mais</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Marketing Digital</h3>
+                        <img class="card__img" src="assets/imagens/capa-marketing.svg" width="600" height="800"
+                            alt="Capa do livro Marketing Digital">
+                        <p class="card__text">Estratégias para atrair, conquistar e manter clientes nos canais online.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Marketing Digital">Saiba mais</a>
+                    </article>
+
+                    <article class="card">
+                        <h3 class="card__title">Ética e Cidadania</h3>
+                        <img class="card__img" src="assets/imagens/capa-etica.svg" width="600" height="800"
+                            alt="Capa do livro Ética e Cidadania">
+                        <p class="card__text">Responsabilidade profissional e social para a vida acadêmica e o mercado.</p>
+                        <a class="btn" href="#contatos" aria-label="Saiba mais sobre Ética e Cidadania">Saiba mais</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== AS UNIDADES ===================== -->
+        <section class="section section--units" id="unidades" aria-labelledby="unidades-titulo">
+            <div class="container">
+                <h2 id="unidades-titulo" class="section__title">As unidades</h2>
+
+                <article class="unit">
+                    <img class="unit__img" src="assets/imagens/unidade-1.svg" width="800" height="560"
+                        alt="Ilustração da fachada da Unidade 1">
+                    <div class="unit__body">
+                        <h3 class="unit__title">Unidade 1</h3>
+                        <p>Espaço de leitura com mesas individuais e em grupo, computadores para consulta ao acervo e atendimento da equipe da biblioteca.</p>
+                        <p class="unit__info">Segunda a sexta, das 8h às 22h</p>
+                    </div>
+                </article>
+
+                <article class="unit">
+                    <img class="unit__img" src="assets/imagens/unidade-2.svg" width="800" height="560"
+                        alt="Ilustração das estantes da Unidade 2">
+                    <div class="unit__body">
+                        <h3 class="unit__title">Unidade 2</h3>
+                        <p>Acervo físico organizado por área do conhecimento, com apoio para empréstimos, renovações e pesquisa de materiais.</p>
+                        <p class="unit__info">Segunda a sexta, das 8h às 21h</p>
+                    </div>
+                </article>
+
+                <article class="unit">
+                    <img class="unit__img" src="assets/imagens/unidade-3.svg" width="800" height="560"
+                        alt="Ilustração de um notebook na Unidade 3">
+                    <div class="unit__body">
+                        <h3 class="unit__title">Unidade 3</h3>
+                        <p>Laboratório de acesso digital para consultar a biblioteca online, baixar materiais e tirar dúvidas com a equipe.</p>
+                        <p class="unit__info">Segunda a sábado, das 9h às 18h</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================== CONTATOS ===================== -->
+        <section class="section section--contact" id="contatos" aria-labelledby="contatos-titulo">
+            <div class="container">
+                <h2 id="contatos-titulo" class="section__title">Contatos</h2>
+
+                <div class="contact">
+                    <div class="contact__body">
+                        <p>Precisa de ajuda para encontrar um livro, renovar um empréstimo ou acessar um material? Fale com a equipe da biblioteca.</p>
+                        <p>
+                            E-mail: <a href="mailto:biblioteca@unifecaf.edu.br">biblioteca@unifecaf.edu.br</a><br>
+                            Telefone: <a href="tel:+551100000000">(11) 0000-0000</a><br>
+                            Atendimento: segunda a sexta, das 8h às 20h
+                        </p>
+                        <p>Se preferir, visite uma das unidades e peça orientação presencial.</p>
+                    </div>
+
+                    <figure class="contact__figure">
+                        <img src="assets/imagens/contato.svg" width="800" height="560"
+                            alt="Ilustração de um envelope com sinal de confirmação">
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===================== RODAPÉ ===================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Biblioteca Digital UniFECAF. Projeto acadêmico da disciplina Design Web.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
